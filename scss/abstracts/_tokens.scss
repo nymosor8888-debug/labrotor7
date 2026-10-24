@@ -1,0 +1,73 @@
+@use "functions" as *;
+
+// ---------- Maps ----------
+$breakpoints: (
+  sm: 600px,
+  md: 992px,
+);
+
+$radii: (
+  sm: 6px,
+  md: 8px,
+  lg: 12px,
+);
+
+$spacers: (
+  1: 8px,
+  2: 16px,
+  3: 24px,
+);
+
+$theme-dark: (
+  bg: #0b1f23,
+  surface: #153e43,
+  surface-2: #0e292e,
+  border: #286067,
+  text: #eaf4f5,
+  text-muted: #b8d2d5,
+  accent: #19a7a0,
+  accent-hover: #138780,
+  accent-text: contrast(#19a7a0, #06211f, #ffffff),
+  focus: #38bdf8,
+);
+
+$theme-light: (
+  bg: #f1f7f8,
+  surface: #ffffff,
+  surface-2: #e3eef0,
+  border: #b9d0d4,
+  text: #12292d,
+  text-muted: #46646a,
+  accent: #0d7f79,
+  accent-hover: #0a615c,
+  accent-text: contrast(#0d7f79, #06211f, #ffffff),
+  focus: #1d4ed8,
+);
+
+$container-width: 1200px;
+
+// ---------- Custom properties ----------
+@mixin emit-theme($map) {
+  @each $name, $value in $map {
+    --#{$name}: #{$value};
+  }
+}
+
+:root {
+  --font: 'Roboto', sans-serif;
+  --dur: 0.5s;
+  --ease: cubic-bezier(0.2, 0.7, 0.2, 1);
+
+  @each $name, $value in $spacers {
+    --space-#{$name}: #{$value};
+  }
+  @each $name, $value in $radii {
+    --radius-#{$name}: #{$value};
+  }
+
+  @include emit-theme($theme-dark);
+}
+
+[data-theme="light"] {
+  @include emit-theme($theme-light);
+}

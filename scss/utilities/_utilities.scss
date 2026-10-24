@@ -1,0 +1,21 @@
+@use "../abstracts" as *;
+
+$text-utils: (text, text-muted, accent);
+$bg-utils: (bg, surface, surface-2, accent);
+
+@each $name in $text-utils {
+  .u-text-#{$name} { color: var(--#{$name}); }
+}
+
+@each $name in $bg-utils {
+  .u-bg-#{$name} { background-color: var(--#{$name}); }
+}
+
+@each $name, $value in $radii {
+  .u-rounded-#{$name} { border-radius: $value; }
+}
+
+@each $name, $value in $spacers {
+  .u-mt-#{$name} { margin-top: $value; }
+  .u-mb-#{$name} { margin-bottom: $value; }
+}

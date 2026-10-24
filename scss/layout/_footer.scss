@@ -1,0 +1,11 @@
+@use "../abstracts" as *;
+
+.site-footer {
+  display: flex;
+  justify-content: center;
+  padding: var(--space-3) var(--space-2);
+  background: var(--surface-2);
+  border-top: 1px solid var(--border);
+  color: var(--text-muted);
+  font-size: rem(14);
+}

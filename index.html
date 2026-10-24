@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="mn" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Лаб 7 - Зургийн цомог</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <a class="skip-link" href="#gallery">Агуулга руу очих</a>
+
+    <header class="site-header">
+        <div class="site-header__inner">
+            <div>
+                <h1 class="site-header__title">Зургийн цомог</h1>
+                <p class="site-header__subtitle">Лаб 7: Sass/SCSS refactoring</p>
+            </div>
+            <button type="button" class="btn btn--theme" id="themeToggle" aria-pressed="false">
+                <span id="themeLabel">Цайвар горим</span>
+            </button>
+        </div>
+    </header>
+
+    <nav class="main-nav" aria-label="Үндсэн цэс">
+        <button class="main-nav__toggle" id="navToggle" type="button"
+                aria-expanded="false" aria-controls="navList"
+                aria-label="Цэс нээх/хаах">☰</button>
+        <ul class="main-nav__list" id="navList">
+            <li><a class="main-nav__link" href="#gallery">Цомог</a></li>
+            <li><a class="main-nav__link" href="#video">Видео</a></li>
+            <li><a class="main-nav__link" href="#map">Газрын зураг</a></li>
+            <li><a class="main-nav__link" href="#about">Тухай</a></li>
+        </ul>
+    </nav>
+
+    <main class="page">
+
+        <section id="gallery">
+            <h2 class="page__title">Зургийн цомог</h2>
+            <p class="page__lead">Зураг дээр хулганаа аваачих эсвэл Tab дарж фокуслах, мөн "Эргүүлэх" товчоор нөгөө талыг нь хараарай.</p>
+
+            <div class="gallery">
+
+                <article class="flip-card" style="--i:0">
+                    <div class="flip-card__inner">
+                        <div class="flip-card__face flip-card__face--front">
+                            <img class="flip-card__img" src="img/photo1.jpg" alt="Уулын зураг" width="800" height="600" loading="lazy">
+                            <button type="button" class="btn btn--flip" aria-label="Зураг 1-ийг эргүүлэх">Эргүүлэх</button>
+                        </div>
+                        <div class="flip-card__face flip-card__face--back">
+                            <h3>Уул</h3>
+                            <p class="flip-card__text">Өглөөний цагт авсан зураг.</p>
+                            <button type="button" class="btn btn--flip" aria-label="Зураг 1-д буцах">Буцах</button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="flip-card" style="--i:1">
+                    <div class="flip-card__inner">
+                        <div class="flip-card__face flip-card__face--front">
+                            <img class="flip-card__img" src="img/photo2.jpg" alt="Нууруудын зураг" width="800" height="600" loading="lazy">
+                            <button type="button" class="btn btn--flip" aria-label="Зураг 2-ыг эргүүлэх">Эргүүлэх</button>
+                        </div>
+                        <div class="flip-card__face flip-card__face--back">
+                            <h3>Нуур</h3>
+                            <p class="flip-card__text">Тайван усны гадаргуу.</p>
+                            <button type="button" class="btn btn--flip" aria-label="Зураг 2-т буцах">Буцах</button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="flip-card" style="--i:2">
+                    <div class="flip-card__inner">
+                        <div class="flip-card__face flip-card__face--front">
+                            <img class="flip-card__img" src="img/photo3.jpg" alt="Хээрийн зураг" width="800" height="600" loading="lazy">
+                            <button type="button" class="btn btn--flip" aria-label="Зураг 3-ыг эргүүлэх">Эргүүлэх</button>
+                        </div>
+                        <div class="flip-card__face flip-card__face--back">
+                            <h3>Хээр</h3>
+                            <p class="flip-card__text">Өргөн уудам тал нутаг.</p>
+                            <button type="button" class="btn btn--flip" aria-label="Зураг 3-т буцах">Буцах</button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="flip-card" style="--i:3">
+                    <div class="flip-card__inner">
+                        <div class="flip-card__face flip-card__face--front">
+                            <img class="flip-card__img" src="img/photo4.jpg" alt="Хотын зураг" width="800" height="600" loading="lazy">
+                            <button type="button" class="btn btn--flip" aria-label="Зураг 4-ийг эргүүлэх">Эргүүлэх</button>
+                        </div>
+                        <div class="flip-card__face flip-card__face--back">
+                            <h3>Хот</h3>
+                            <p class="flip-card__text">Үдшийн гэрэлтэй хот.</p>
+                            <button type="button" class="btn btn--flip" aria-label="Зураг 4-т буцах">Буцах</button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="flip-card" style="--i:4">
+                    <div class="flip-card__inner">
+                        <div class="flip-card__face flip-card__face--front">
+                            <img class="flip-card__img" src="img/photo5.jpg" alt="Ойн зураг" width="800" height="600" loading="lazy">
+                            <button type="button" class="btn btn--flip" aria-label="Зураг 5-ыг эргүүлэх">Эргүүлэх</button>
+                        </div>
+                        <div class="flip-card__face flip-card__face--back">
+                            <h3>Ой</h3>
+                            <p class="flip-card__text">Нарсан ойн дундах зам.</p>
+                            <button type="button" class="btn btn--flip" aria-label="Зураг 5-д буцах">Буцах</button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="flip-card" style="--i:5">
+                    <div class="flip-card__inner">
+                        <div class="flip-card__face flip-card__face--front">
+                            <img class="flip-card__img" src="img/photo6.jpg" alt="Тэнгэрийн зураг" width="800" height="600" loading="lazy">
+                            <button type="button" class="btn btn--flip" aria-label="Зураг 6-г эргүүлэх">Эргүүлэх</button>
+                        </div>
+                        <div class="flip-card__face flip-card__face--back">
+                            <h3>Тэнгэр</h3>
+                            <p class="flip-card__text">Нар жаргах үеийн тэнгэр.</p>
+                            <button type="button" class="btn btn--flip" aria-label="Зураг 6-д буцах">Буцах</button>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+
+        <section id="video">
+            <h2 class="page__title">Видео</h2>
+            <video controls preload="metadata" width="960" height="540">
+                <source src="video/clip.webm" type="video/webm">
+                <source src="video/clip.mp4" type="video/mp4">
+                <track kind="subtitles" src="video/clip.mn.vtt"
+                       srclang="mn" label="Монгол" default>
+                Таны хөтөч video элемент дэмждэггүй байна.
+                <a href="video/clip.mp4">Видеог татаж авах</a>.
+            </video>
+        </section>
+
+        <section id="map">
+            <h2 class="page__title">Газрын зураг</h2>
+            <div class="map">
+                <iframe class="map__frame"
+                    title="Улаанбаатар хотын газрын зураг (OpenStreetMap)"
+                    src="https://www.openstreetmap.org/export/embed.html?bbox=106.85%2C47.88%2C106.98%2C47.95&amp;layer=mapnik"
+                    loading="lazy"
+                    sandbox="allow-scripts allow-same-origin"
+                    referrerpolicy="no-referrer"></iframe>
+            </div>
+        </section>
+
+        <section id="about">
+            <h2 class="page__title">Тухай</h2>
+            <div class="about">
+                <svg class="about__icon" viewBox="0 0 64 64" role="img" aria-labelledby="camTitle camDesc">
+                    <title id="camTitle">Фотоаппаратын дүрс</title>
+                    <desc id="camDesc">Зургийн цомгийг төлөөлөх энгийн камерын дүрс</desc>
+                    <rect x="6" y="18" width="52" height="34" rx="6" fill="currentColor" opacity="0.25"/>
+                    <path d="M22 18l4-8h12l4 8" fill="none" stroke="currentColor" stroke-width="3" stroke-linejoin="round"/>
+                    <circle cx="32" cy="35" r="11" fill="none" stroke="currentColor" stroke-width="3"/>
+                    <circle cx="32" cy="35" r="4" fill="currentColor"/>
+                </svg>
+                <p>Энэ хуудас нь Лаб 4, 5-ын Grid болон responsive загварыг үргэлжлүүлж, CSS3 animation, 3D flip card, dark mode, multimedia-г хүртээмжтэй байдлаар хэрэгжүүлсэн.</p>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="site-footer">
+        <p>&copy; 2026 Зургийн цомог портал</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

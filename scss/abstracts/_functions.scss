@@ -1,0 +1,40 @@
+@use "sass:math";
+@use "sass:color";
+
+// px -> rem (unitless эсвэл px оруулж болно)
+@function rem($px, $base: 16) {
+  @if not math.is-unitless($px) {
+    $px: math.div($px, 1px);
+  }
+  @return math.div($px, $base) * 1rem;
+}
+
+@function _linear($channel) {
+  $v: math.div($channel, 255);
+  @if $v <= 0.03928 {
+    @return math.div($v, 12.92);
+  }
+  @return math.pow(math.div($v + 0.055, 1.055), 2.4);
+}
+
+// WCAG relative luminance
+@function luminance($c) {
+  $r: _linear(color.channel($c, "red", $space: rgb));
+  $g: _linear(color.channel($c, "green", $space: rgb));
+  $b: _linear(color.channel($c, "blue", $space: rgb));
+  @return 0.2126 * $r + 0.7152 * $g + 0.0722 * $b;
+}
+
+@function contrast-ratio($a, $b) {
+  $l1: luminance($a);
+  $l2: luminance($b);
+  @return math.div(math.max($l1, $l2) + 0.05, math.min($l1, $l2) + 0.05);
+}
+
+// Дэвсгэр дээр аль нь илүү тод харагдахыг сонгоно
+@function contrast($bg, $dark: #000000, $light: #ffffff) {
+  @if contrast-ratio($bg, $dark) >= contrast-ratio($bg, $light) {
+    @return $dark;
+  }
+  @return $light;
+}

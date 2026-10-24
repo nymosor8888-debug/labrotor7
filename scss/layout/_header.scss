@@ -1,0 +1,25 @@
+@use "../abstracts" as *;
+
+.site-header {
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  padding: var(--space-2);
+
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--space-2);
+    flex-wrap: wrap;
+    max-width: $container-width;
+    margin: 0 auto;
+  }
+
+  &__title { font-size: rem(22); }
+  &__subtitle { color: var(--text-muted); font-size: rem(14); }
+
+  @include respond(sm) {
+    &__title { font-size: rem(28); }
+    &__subtitle { font-size: rem(16); }
+  }
+}

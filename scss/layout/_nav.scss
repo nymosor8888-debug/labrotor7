@@ -1,0 +1,57 @@
+@use "../abstracts" as *;
+
+.main-nav {
+  background: var(--surface-2);
+  border-bottom: 1px solid var(--border);
+
+  &__toggle {
+    display: block;
+    width: 100%;
+    padding: 12px var(--space-2);
+    border: none;
+    background: none;
+    color: var(--text);
+    font-size: rem(26);
+    text-align: left;
+    cursor: pointer;
+  }
+
+  &__list {
+    display: none;
+    flex-direction: column;
+    gap: 4px;
+    padding: 0 var(--space-2) var(--space-2);
+    list-style: none;
+
+    &.is-open { display: flex; }
+  }
+
+  &__link {
+    display: block;
+    padding: 12px 14px;
+    border-radius: var(--radius-md);
+    color: var(--text);
+    font-weight: 500;
+    text-decoration: none;
+    transition: background-color 0.2s, color 0.2s;
+
+    &:hover {
+      background: var(--accent);
+      color: var(--accent-text);
+    }
+  }
+
+  @include respond(sm) {
+    &__toggle { display: none; }
+
+    &__list,
+    &__list.is-open {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 20px;
+      padding: 14px var(--space-2);
+    }
+  }
+}

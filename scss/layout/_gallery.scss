@@ -1,0 +1,10 @@
+@use "../abstracts" as *;
+
+.gallery {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-3);
+
+  @include respond(sm) { grid-template-columns: repeat(2, 1fr); }
+  @include respond(md) { grid-template-columns: repeat(3, 1fr); }
+}

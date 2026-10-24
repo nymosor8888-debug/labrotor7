@@ -1,0 +1,20 @@
+@use "../abstracts" as *;
+
+.about {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-3);
+  background: var(--surface);
+  @include bordered(lg);
+
+  &__icon {
+    flex: none;
+    width: 72px;
+    height: 72px;
+    color: var(--accent);
+    transition: transform 0.4s var(--ease);
+
+    &:hover { transform: rotate(-8deg) scale(1.1); }
+  }
+}

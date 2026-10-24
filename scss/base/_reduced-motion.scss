@@ -1,0 +1,17 @@
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition-duration: 0.01ms !important;
+    transition-delay: 0s !important;
+  }
+
+  .flip-card:not(.is-flipped):hover .flip-card__inner,
+  .flip-card:not(.is-flipped):focus-within .flip-card__inner,
+  .flip-card:hover .flip-card__img,
+  .about__icon:hover,
+  .btn:hover {
+    transform: none;
+  }
+}

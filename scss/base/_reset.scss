@@ -1,0 +1,19 @@
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: var(--font);
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.5;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+h1, h2, h3, p, ul { margin: 0; }
+ul { padding: 0; }
+img, video, iframe { max-width: 100%; display: block; }
+
+:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 3px;
+}

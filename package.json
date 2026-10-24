@@ -1,0 +1,12 @@
+{
+  "name": "lab6",
+  "version": "1.0.0",
+  "scripts": {
+    "sass": "sass scss/main.scss css/style.css --style=expanded --no-source-map",
+    "watch": "sass --watch scss/main.scss:css/style.css --style=expanded",
+    "build": "sass scss/main.scss css/style.min.css --style=compressed --no-source-map"
+  },
+  "devDependencies": {
+    "sass": "^1.106.1"
+  }
+}

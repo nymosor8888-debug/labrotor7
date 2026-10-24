@@ -1,0 +1,19 @@
+@use "../abstracts" as *;
+
+// .btn--theme, .btn--flip нь HTML дээрх modifier (өөрийн стиль шаардлагагүй)
+.btn {
+  padding: 10px 16px;
+  border: none;
+  border-radius: var(--radius-md);
+  background: var(--accent);
+  color: var(--accent-text);
+  font: 700 rem(14) var(--font);
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.2s var(--ease);
+
+  &:hover {
+    background: var(--accent-hover);
+    transform: translateY(-2px);
+  }
+  &:active { transform: translateY(0) scale(0.97); }
+}

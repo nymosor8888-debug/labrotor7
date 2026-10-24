@@ -1,0 +1,24 @@
+@use "sass:map";
+@use "tokens" as *;
+
+@mixin respond($bp) {
+  @if not map.has-key($breakpoints, $bp) {
+    @error "Unknown breakpoint `#{$bp}`.";
+  }
+  @media (min-width: map.get($breakpoints, $bp)) {
+    @content;
+  }
+}
+
+@mixin flex-center($direction: row) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: center;
+  align-items: center;
+}
+
+// 1px border + radius давтагдаж байсныг нэгтгэв
+@mixin bordered($radius: lg) {
+  border: 1px solid var(--border);
+  border-radius: var(--radius-#{$radius});
+}
