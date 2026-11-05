@@ -24,7 +24,7 @@ themeBtn.addEventListener("click", () => {
     try { localStorage.setItem("theme", next); } catch (e) { /* алгасна */ }
 });
 
-/* ---------- 2. Flip card товч ---------- */
+/* ---------- 2. Flip card ---------- */
 document.querySelectorAll(".flip-card").forEach((card) => {
     card.querySelectorAll(".btn--flip").forEach((btn) => {
         btn.addEventListener("click", () => {
